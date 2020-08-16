@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8j5-HM-6HU">
+                                <rect key="frame" x="0.0" y="130" width="414" height="766"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mkv-Z1-al0" customClass="BHMultiModeWaterFlowLayout">
+                                    <size key="itemSize" width="184" height="460"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="BYZ-38-t0r" id="xhz-P1-CQq"/>
+                                    </connections>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="R68-gv-6Ym"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="r3i-QY-VfO"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQu-nn-2D5">
+                                <rect key="frame" x="187" y="68" width="40" height="30"/>
+                                <color key="backgroundColor" red="0.95595747230000006" green="0.0" blue="0.16834428909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Insert"/>
+                                <connections>
+                                    <action selector="insert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bff-gL-Dr9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvY-5S-rSz">
+                                <rect key="frame" x="66" y="68" width="102" height="30"/>
+                                <color key="backgroundColor" red="0.19215686269999999" green="0.70196078429999997" blue="0.050980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="InsertASection"/>
+                                <connections>
+                                    <action selector="insertASection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t9z-id-PUf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8j5-HM-6HU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3jk-Dq-XPd"/>
+                            <constraint firstItem="8j5-HM-6HU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PHG-7f-tci"/>
+                            <constraint firstItem="xQu-nn-2D5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="fNQ-hS-b8i"/>
+                            <constraint firstAttribute="bottom" secondItem="8j5-HM-6HU" secondAttribute="bottom" id="ftK-at-p6T"/>
+                            <constraint firstItem="bvY-5S-rSz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="66" id="gOi-4X-O4Y"/>
+                            <constraint firstItem="xQu-nn-2D5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="giS-KH-VQS"/>
+                            <constraint firstItem="8j5-HM-6HU" firstAttribute="top" secondItem="xQu-nn-2D5" secondAttribute="bottom" constant="32" id="kuU-bI-vlM"/>
+                            <constraint firstItem="bvY-5S-rSz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="u8k-mi-PIS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="_collectionView" destination="8j5-HM-6HU" id="HQJ-rt-EjO"/>
+                        <outlet property="_waterFlowLayout" destination="Mkv-Z1-al0" id="aJd-yg-IpJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
+        </scene>
+    </scenes>
+</document>
